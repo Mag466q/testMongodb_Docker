@@ -4,6 +4,6 @@ import com.example.app.testmongodb_docker.Model.Group;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface GroupRepository  extends MongoRepository<Group,Long> {
+public interface GroupRepository  extends MongoRepository<Group,String> {
 
 }

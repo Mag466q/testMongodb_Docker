@@ -25,14 +25,15 @@ public class StudentService {
         this.groupService = groupService;
     }
 
-
-    //TODO Rozszerzyc by dodawało grupe po id
     public Student addStudent(Student student){
+
+        String l= student.getGroupId().getId();
+        student.setGroupId(groupService.findGroupByID(l));
+
         return studentRepository.save(student);
     }
 
     public List<Student> findAllStudent(){
-
         return studentRepository.findAll();
     }
 
@@ -40,12 +41,12 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
-    public Student findStudentById (Long id){
+    public Student findStudentById (String id){
         return studentRepository.findById(id)
                 .orElseThrow(() ->  new StudentNotFoundException("User by id"+ id + "not found"));
     }
 
-    public void deleteStudent (Long id){
+    public void deleteStudent (String id){
         studentRepository.deleteById(id);
     }
 }

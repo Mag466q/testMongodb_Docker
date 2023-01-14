@@ -5,6 +5,7 @@ import com.example.app.testmongodb_docker.Model.enums.GenderE;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 
 @Document
@@ -12,8 +13,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 public class Student {
 
-    @Id
-    private long id;
+    @MongoId
+    private String id;
     private String firstName;
     private String lastName;
     private String email;

@@ -20,10 +20,21 @@ public class GroupService {
         this.groupRepository = groupRepository;
     }
 
-    public Group findGroupByID(Long id){
+    public Group findGroupByID(String id){
         return groupRepository.findById(id).orElseThrow(() -> new GroupNotFoundException("Grupa o"+ id+ "nie istnieje"));
     }
-    public List<Group> findAllStudent() {
+    public List<Group> findAllGroup() {
         return groupRepository.findAll();
+    }
+
+    public Group addGroup(Group group) {
+        return groupRepository.save(group);
+    }
+
+    public Group updateGroup(Group group) {
+        return groupRepository.save(group);
+    }
+    public void deleteGroup(String id) {
+        groupRepository.deleteById(id);
     }
 }

@@ -4,32 +4,29 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-
 @SpringBootApplication
 
 public class TestMongodbDockerApplication {
 
- //   public TestMongodbDockerApplication(GroupService groupService) {
- //       this.groupService = groupService;
- //   }
+
 
     public static void main(String[] args) {
         SpringApplication.run(TestMongodbDockerApplication.class, args);
 
     }
 
-//    @Bean
-//     CommandLineRunner runner (GroupRepository repository){
-//         return args -> {
-//             Group group = new Group(
-//                     GroupE.WCY19KA1S0,
-//                      10
-//             );
-//             repository.insert(group);
-//         };
-//     }
-//
-//        public final GroupService groupService;
+//  @Bean
+//  CommandLineRunner runner (GroupRepository repository){
+//       return args -> {
+//           Group group = new Group(
+//                   GroupE.WCY19KB1S0,
+//                    11
+//           );
+//           repository.insert(group);
+//       };
+//   }
+
+
 // @Bean
 // @Autowired
 // CommandLineRunner runner (StudentRepository repository){

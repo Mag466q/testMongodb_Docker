@@ -18,37 +18,11 @@ public class ScriptController {
         this.scriptService = scriptService;
     }
 
-    @PutMapping("/defult")
+    @PutMapping("")
     public ResponseEntity<String> execScript(@RequestBody String script){
-        return new ResponseEntity<>(scriptService.exec(script), HttpStatus.OK);
+        return new ResponseEntity<>(scriptService.exec(script), HttpStatus.ACCEPTED);
     }
 
-    @PutMapping()
-    public ResponseEntity<String> execScript(){
-        String script = """
-                                
-                const tab = [];
-                function A() {
-                    var q = 0;
-                    for (studnet of SR.findAll()) {
-                        x = studnet.getGroupId();
-                        w = x.getGroup();
-                        c = 'WCY19KB1S0';
- 
-                        if (w == c) {
-                            tab.push(studnet.getFirstName())
-                            q = q+1;
-                            console.log(q);
-                            return q;
-                        }
-                    }
-                }
-                A();
-                tab;
-                """;
-
-        return new ResponseEntity<>(scriptService.exec(script), HttpStatus.OK);
-    }
 
 }
 

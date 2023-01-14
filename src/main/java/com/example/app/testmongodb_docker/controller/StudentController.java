@@ -26,7 +26,7 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Student> getStudentByID(@PathVariable("id") Long id){
+    public ResponseEntity<Student> getStudentByID(@PathVariable("id") String id){
         Student student =studentService.findStudentById(id);
         return new ResponseEntity<>(student,HttpStatus.OK);
     }
@@ -44,7 +44,7 @@ public class StudentController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteStudnet(@PathVariable("id") Long id){
+    public ResponseEntity<?> deleteStudnet(@PathVariable("id") String id){
         studentService.deleteStudent(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

@@ -1,7 +1,7 @@
 package com.example.app.testmongodb_docker.Model;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
+
 import lombok.Data;
 
 @Data

@@ -1,24 +1,25 @@
 package com.example.app.testmongodb_docker.Model;
 
 
-import com.example.app.testmongodb_docker.Model.enums.GroupE;
-
-import lombok.Builder;
+import com.example.app.testmongodb_docker.Model.enums.TypeE;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Document
 @Data
 
 public class Group {
 
-    @Id
-    private long id;
-    private GroupE group;
+    @MongoId
+    private String id;
+    // WCY19KA1S0,WCY19KB1S0,WCY19KC1S1,WCY19KC1S0
+    private String group;
     private int     rok;
 
-    public Group(GroupE group, int rok) {
+    private TypeE type ;
+
+    public Group(String group, int rok) {
         this.group = group;
         this.rok = rok;
     }
