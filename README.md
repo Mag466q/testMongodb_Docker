@@ -2,6 +2,8 @@
 
 
 // Przykład 01
+
+
 function Change_City() {
     var AllS =SR.findAll();
     var i=0;
@@ -19,4 +21,5 @@ function Change_City() {
     }
     return count;
 }
+
 Change_City();
